@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Anantashayana/anantashayana.github.io/blob/gh-pages/static/css/main.562b4c6a.css",
-    "main.js": "/Anantashayana/anantashayana.github.io/blob/gh-pages/static/js/main.0f972df5.js",
-    "index.html": "/Anantashayana/anantashayana.github.io/blob/gh-pages/index.html",
-    "main.562b4c6a.css.map": "/Anantashayana/anantashayana.github.io/blob/gh-pages/static/css/main.562b4c6a.css.map",
-    "main.0f972df5.js.map": "/Anantashayana/anantashayana.github.io/blob/gh-pages/static/js/main.0f972df5.js.map"
+    "main.css": "/static/css/main.562b4c6a.css",
+    "main.js": "/static/js/main.ab88930f.js",
+    "index.html": "/index.html",
+    "main.562b4c6a.css.map": "/static/css/main.562b4c6a.css.map",
+    "main.ab88930f.js.map": "/static/js/main.ab88930f.js.map"
   },
   "entrypoints": [
     "static/css/main.562b4c6a.css",
-    "static/js/main.0f972df5.js"
+    "static/js/main.ab88930f.js"
   ]
 }
