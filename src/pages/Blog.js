@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import fm from 'front-matter';
 import { marked } from 'marked';
 
-const BLOGS_PATH = '/blogs';
+const BLOGS_PATH = process.env.PUBLIC_URL + '/blogs';
 
 
 const Blog = () => {
