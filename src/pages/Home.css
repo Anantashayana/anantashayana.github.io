@@ -1,0 +1,157 @@
+/* General Layout */
+.home {
+  padding: 3rem 2rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  color: #222;
+}
+
+/* Faint Background Decoration */
+.home__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+/* Intro Section */
+.home__intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.home__text {
+  max-width: 500px;
+}
+
+.home__greeting {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.home__title {
+  font-size: 2.8rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: #111;
+}
+
+.home__subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* CTA - Button + Links */
+.home__cta {
+  margin-top: 1.8rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.home__socials {
+  margin-top: 1rem;
+}
+
+.home__socials a {
+  margin-right: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.home__socials a:hover {
+  color: #0056b3;
+}
+
+/* Hero Card (profile) */
+.home__hero .hero-card {
+  border: 1px solid #e5e5e5;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 250px;
+  background: #fafafa;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+.hero-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* Things I Love Section */
+.home__love {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.home__love h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.love__cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  width: 250px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
