@@ -4,9 +4,9 @@
   "description": "Software engineer working with backend and distributed data systems. Notes, projects, and books.",
   "icons": [
     {
-      "src": "favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any"
+      "src": "avatar.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
