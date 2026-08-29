@@ -1,45 +1,44 @@
 import React from "react";
-// import svgRect from "@src/static/home_rect.svg";
-import "./Home.css"; // 👈 styles file
+import { Link } from "react-router-dom";
+import "./Home.css";
 
 const Home = () => {
   return (
     <div className="home" id="home">
-      {/* Background Shape */}
-      {/* <img className="home__bg" src={svgRect} alt="background design" /> */}
-
       {/* Intro */}
       <section className="home__intro">
         <div className="home__text">
+          <span className="home__badge">
+            <span className="home__badge-dot" /> Open to opportunities
+          </span>
+
           <p className="home__greeting">👋 Hi, I’m</p>
           <h1 className="home__title">Anantashayana Hegde</h1>
-          <p className="home__subtitle">Software Engineer | Backend Developer</p>
+          <p className="home__subtitle">Software Engineer · Backend Developer</p>
+          <p className="home__tagline">
+            I build reliable backend systems and enjoy working across cloud,
+            DevOps, and machine learning.
+          </p>
 
           <div className="home__cta">
             <a
-              className="btn"
+              className="btn btn--primary"
               href="https://drive.google.com/file/d/1tEN65CfDJmLXSo5AvCqF4Q91rK8UEaFV/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
             >
               📄 Download Resume
             </a>
+            <Link className="btn btn--ghost" to="/projects">
+              View Projects
+            </Link>
+          </div>
 
-            <div className="home__socials">
-              <a href="https://github.com/Anantashayana" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://twitter.com/#" target="_blank" rel="noopener noreferrer">Twitter</a>
-              <a href="https://www.linkedin.com/in/anantashayana/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+          <div className="home__socials">
+            <a href="https://github.com/Anantashayana" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/anantashayana/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
-
-        {/* Hero Image/Card */}
-        {/* <div className="home__hero">
-          <div className="hero-card">
-            <img src="/profile.jpg" alt="Anantashayana" /> 
-            <p>Passionate about backend systems, cloud & distributed apps 🚀</p>
-          </div>
-        </div> */}
       </section>
 
       {/* Things I Love Section */}

@@ -2,11 +2,15 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 const Header = () => {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved === null ? true : saved === 'true';
+  });
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -22,12 +26,13 @@ const Header = () => {
     } else {
       document.body.classList.remove('dark-mode');
     }
+    localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
   return (
     <header className="header-bar">
       <div className="header-content">
-        <h1 className="site-title">Anantashayana</h1>
+        <Link to="/" className="site-title">Anantashayana</Link>
         <div className="header-right">
           {isMobile ? (
             <>

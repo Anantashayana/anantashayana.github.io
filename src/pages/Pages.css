@@ -1,0 +1,229 @@
+/* Shared styles for content pages — uses theme variables from App.css */
+.page {
+  padding: 2rem 0 3rem;
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text);
+}
+
+.page__title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.page__lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.page__section {
+  margin-bottom: 2.5rem;
+}
+
+.page__section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.page p {
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.page a {
+  color: var(--accent);
+}
+
+/* Button */
+.page__button {
+  display: inline-block;
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.page__button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Timeline (Work) */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline__item {
+  border-left: 2px solid var(--border);
+  padding: 0 0 1.8rem 1.5rem;
+  position: relative;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline__role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.timeline__meta {
+  font-size: 0.88rem;
+  color: var(--text-faint);
+  margin: 0.2rem 0 0.6rem;
+}
+
+/* Cards grid (Projects) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  background: var(--surface);
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-strong);
+}
+
+.project-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.12rem;
+  color: var(--text);
+}
+
+.project-card p {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-card__link {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.project-card-link:hover .project-card__link {
+  text-decoration: underline;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+/* Tag pill (shared with App.css .tag) */
+.tag {
+  font-size: 0.78rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* Bookshelf */
+.book-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.book:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-strong);
+}
+
+.book__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.book__title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.02rem;
+}
+
+.book__author {
+  color: var(--text-faint);
+  font-size: 0.88rem;
+  margin-top: 0.15rem;
+}
+
+.book__status {
+  font-size: 0.78rem;
+  white-space: nowrap;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.book__status--reading {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: transparent;
+}

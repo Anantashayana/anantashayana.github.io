@@ -1,13 +1,17 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Contact from './pages/Contact';
+import Work from './pages/Work';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
+import Bookshelf from './pages/Bookshelf';
+import BookDetail from './pages/BookDetail';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 // Use HashRouter for GitHub Pages compatibility
@@ -20,13 +24,17 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/bookshelf" element={<Bookshelf />} />
+            <Route path="/bookshelf/:slug" element={<BookDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/category/:category" element={<Blog />} />
             <Route path="/post/:id" element={<Post />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        {/* <Footer /> */}
       </div>
     </HashRouter>
   );
