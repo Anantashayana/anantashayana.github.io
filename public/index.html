@@ -10,6 +10,13 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!-- Editorial fonts: Fraunces (serif display) + Newsreader (serif text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap"
+      rel="stylesheet"
+    />
     <!-- Preload blogs.json to ensure blogs folder is included in build -->
     <link rel="preload" href="%PUBLIC_URL%/blogs/blogs.json" as="fetch" crossorigin="anonymous">
     <!--
@@ -26,7 +33,38 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Anantashayana Hegde</title>
+    <!-- Apply theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('darkMode');
+          var dark = saved === null ? true : saved === 'true';
+          var root = document.documentElement;
+          if (dark) {
+            root.classList.add('dark-preload');
+            root.style.backgroundColor = '#131417';
+          } else {
+            root.style.backgroundColor = '#f6f1e7';
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      /* Paint the correct theme immediately, before React mounts. */
+      html.dark-preload {
+        background-color: #131417;
+      }
+      html.dark-preload body {
+        background-color: #131417;
+        color: #e8eaed;
+        --header-bg: rgba(19, 20, 23, 0.85);
+        --text: #e8eaed;
+        --text-muted: #a9adb5;
+        --border: #2a2c31;
+        --surface: #1c1e22;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

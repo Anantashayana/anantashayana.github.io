@@ -11,8 +11,19 @@ const Navigation = () => {
     { path: '/work', label: 'Work' },
     { path: '/projects', label: 'Projects' },
     { path: '/bookshelf', label: 'Bookshelf' },
-    { path: '/blog', label: 'Blog' }
+    // Blog is also active on individual post pages (/post/:id)
+    { path: '/blog', label: 'Blog', match: ['/blog', '/post'] }
   ];
+
+  const { pathname } = location;
+
+  const isActive = (item) => {
+    if (item.path === '/') return pathname === '/';
+    const prefixes = item.match || [item.path];
+    return prefixes.some(
+      (p) => pathname === p || pathname.startsWith(p + '/')
+    );
+  };
 
   return (
     <nav className="navigation">
@@ -21,7 +32,7 @@ const Navigation = () => {
           <li key={item.path} className="nav-item">
             <Link
               to={item.path}
-              className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+              className={`nav-link ${isActive(item) ? 'active' : ''}`}
             >
               {item.label}
             </Link>

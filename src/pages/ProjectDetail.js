@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import fm from 'front-matter';
-import { marked } from 'marked';
+import { renderMarkdown } from '../utils/markdown';
 import './Pages.css';
 
 const PROJECTS_PATH = process.env.PUBLIC_URL + '/projects';
@@ -22,12 +22,7 @@ const ProjectDetail = () => {
         if (typeof tags === 'string') {
           tags = tags.split(',').map((t) => t.trim());
         }
-        let html = marked(parsed.body);
-        // Rewrite relative image paths to this project's folder
-        html = html.replace(
-          /<img src=["'](?!https?:\/\/|\/)([^"'>]+)["']/g,
-          `<img src="${PROJECTS_PATH}/${slug}/$1"`
-        );
+        const html = renderMarkdown(parsed.body, `${PROJECTS_PATH}/${slug}`);
         setProject({ ...parsed.attributes, tags, body: html });
       } catch (e) {
         setProject(null);

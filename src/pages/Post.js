@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import fm from 'front-matter';
-import { marked } from 'marked';
+import { renderMarkdown } from '../utils/markdown';
 
 const BLOGS_PATH = '/blogs';
 
@@ -20,10 +20,7 @@ const Post = () => {
         if (typeof tags === 'string') {
           tags = tags.split(',').map(t => t.trim());
         }
-        // Render markdown to HTML
-        let html = marked(parsed.body);
-        // Rewrite image src paths to use public/blogs/{id}/images/
-        html = html.replace(/<img src=["'](?!https?:\/\/|\/)([^"'>]+)["']/g, `<img src="${BLOGS_PATH}/${id}/$1"`);
+        const html = renderMarkdown(parsed.body, `${BLOGS_PATH}/${id}`);
         setPost({
           ...parsed.attributes,
           tags,

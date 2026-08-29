@@ -2,6 +2,7 @@
 import React from 'react';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import Header from './components/Header';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
@@ -18,6 +19,7 @@ import './App.css';
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <div className="App">
         <Header />
         <main className="main-content">

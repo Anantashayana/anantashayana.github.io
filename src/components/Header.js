@@ -21,11 +21,17 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
+    const root = document.documentElement;
     if (darkMode) {
       document.body.classList.add('dark-mode');
+      root.classList.add('dark-preload');
     } else {
       document.body.classList.remove('dark-mode');
+      root.classList.remove('dark-preload');
     }
+    // Clear the inline background set by the pre-paint script so the
+    // stylesheet's theme variables take over.
+    root.style.backgroundColor = '';
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 

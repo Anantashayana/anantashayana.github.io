@@ -1,0 +1,77 @@
+/* HeroScene — animated distributed-system constellation */
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 440 / 360;
+  margin: 0 auto;
+}
+
+.scene__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---- Links ---- */
+.link {
+  stroke: var(--border-strong);
+  stroke-width: 1.3;
+  stroke-dasharray: 3 6;
+  opacity: 0.6;
+  animation: linkFlow 1.6s linear infinite;
+}
+
+@keyframes linkFlow {
+  to { stroke-dashoffset: -18; }
+}
+
+/* ---- Data pulses ---- */
+.pulse {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 4px var(--accent));
+}
+
+/* ---- Nodes ---- */
+.node__halo {
+  fill: var(--accent);
+  opacity: 0.06;
+}
+
+.node__disc {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.node {
+  animation: nodeFloat 5s ease-in-out infinite;
+}
+
+.node--1 { animation-delay: 0s; }
+.node--2 { animation-delay: 0.6s; }
+.node--3 { animation-delay: 1.2s; }
+.node--4 { animation-delay: 1.8s; }
+.node--5 { animation-delay: 2.4s; }
+.node--6 { animation-delay: 3s; }
+
+@keyframes nodeFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+
+/* gentle pulse on the halo */
+.node:hover .node__halo,
+.node .node__halo {
+  transition: opacity 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link, .pulse, .node { animation: none; }
+}
+
+@media (max-width: 720px) {
+  .scene { max-width: 400px; }
+}

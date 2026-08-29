@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import fm from 'front-matter';
-import { marked } from 'marked';
+import { renderMarkdown } from '../utils/markdown';
 import './Pages.css';
 
 const BOOKS_PATH = process.env.PUBLIC_URL + '/books';
@@ -18,11 +18,7 @@ const BookDetail = () => {
         const res = await fetch(`${BOOKS_PATH}/${slug}/index.md`);
         if (!res.ok) throw new Error('not found');
         const parsed = fm(await res.text());
-        let html = marked(parsed.body);
-        html = html.replace(
-          /<img src=["'](?!https?:\/\/|\/)([^"'>]+)["']/g,
-          `<img src="${BOOKS_PATH}/${slug}/$1"`
-        );
+        const html = renderMarkdown(parsed.body, `${BOOKS_PATH}/${slug}`);
         setBook({ ...parsed.attributes, body: html });
       } catch (e) {
         setBook(null);
