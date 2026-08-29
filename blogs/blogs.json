@@ -1,3 +1,5 @@
 [
+  "springboot-probes",
+  "jni-jna-override",
   "kubernetes-ckad-cheatsheet"
 ]
