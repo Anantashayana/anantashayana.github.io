@@ -1,0 +1,16 @@
+{
+  "short_name": "Anantashayana",
+  "name": "Anantashayana Hegde",
+  "description": "Software engineer working with backend and distributed data systems. Notes, projects, and books.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#131417",
+  "background_color": "#f6f1e7"
+}
