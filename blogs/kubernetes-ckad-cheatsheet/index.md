@@ -2,7 +2,7 @@
 title: Kubernetes CKAD Exam Cheatsheet & Tips
 date: 2025-01-05 12:28:00
 author: Anantashayana
-tags: ['kubernetes', 'ckad', 'cheatsheet', 'tips']
+tags: ['kubernetes', 'cheatsheet', 'tips']
 ---
 
 # Kubernetes CKAD Exam: Cheatsheet & Tips 🎓
