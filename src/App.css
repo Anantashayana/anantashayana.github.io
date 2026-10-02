@@ -141,8 +141,35 @@ a {
   line-height: 1;
   display: inline-flex;
   align-items: center;
+  gap: 0.55rem;
   color: var(--text);
   text-decoration: none;
+}
+
+.site-title__avatar-wrap {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--accent-soft);
+  border: 1.5px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-title__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.site-title__avatar-fallback {
+  display: none;
 }
 
 .site-title:hover {
@@ -346,6 +373,67 @@ a {
 }
 
 /* =====================================================================
+   TABLE OF CONTENTS
+   ===================================================================== */
+.toc {
+  margin: 1.8rem 0 2.2rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.toc__title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.8rem;
+}
+
+.toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.toc__item {
+  line-height: 1.4;
+}
+
+/* indent by heading level */
+.toc__item--h1 { padding-left: 0; }
+.toc__item--h2 { padding-left: 1rem; }
+.toc__item--h3 { padding-left: 2rem; }
+
+.toc__link {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  border-bottom: none;
+}
+
+.toc__item--h1 .toc__link {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.toc__item--h2 .toc__link {
+  font-weight: 500;
+}
+
+.toc__link:hover {
+  color: var(--accent);
+}
+
+/* =====================================================================
    POST / DETAIL PAGES
    ===================================================================== */
 .post-page {
@@ -417,6 +505,7 @@ a {
   line-height: 1.3;
   font-weight: 700;
   color: var(--text);
+  scroll-margin-top: 80px; /* clear the sticky header */
 }
 
 .post-content h1 { font-size: 1.7rem; }
@@ -487,6 +576,46 @@ a {
 .post-content pre code {
   background: none;
   padding: 0;
+}
+
+/* ── Tables ── */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  font-size: 0.93rem;
+  overflow-x: auto;
+  display: block;
+}
+
+.post-content thead {
+  background: var(--bg-subtle);
+}
+
+.post-content th {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.post-content td {
+  padding: 0.6rem 1rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.post-content tr:nth-child(even) td {
+  background: var(--bg-subtle);
+}
+
+.post-content tr:hover td {
+  background: var(--accent-soft);
+  color: var(--text);
 }
 
 /* =====================================================================

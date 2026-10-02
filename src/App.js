@@ -33,7 +33,7 @@ function App() {
             <Route path="/bookshelf/:slug" element={<BookDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/category/:category" element={<Blog />} />
-            <Route path="/post/:id" element={<Post />} />
+            <Route path="/post/*" element={<Post />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

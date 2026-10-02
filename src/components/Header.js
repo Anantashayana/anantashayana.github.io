@@ -38,7 +38,16 @@ const Header = () => {
   return (
     <header className="header-bar">
       <div className="header-content">
-        <Link to="/" className="site-title">Anantashayana</Link>
+        <Link to="/" className="site-title">
+          <span className="site-title__avatar-wrap">
+            <img
+              src={process.env.PUBLIC_URL + '/avatar.png'}
+              alt=""
+              className="site-title__avatar"
+            />
+          </span>
+          Anantashayana
+        </Link>
         <div className="header-right">
           {isMobile ? (
             <>

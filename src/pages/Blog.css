@@ -1,0 +1,138 @@
+/* =====================================================================
+   BLOG PAGE — category grouping
+   ===================================================================== */
+
+.blog-page__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+  gap: 1rem;
+}
+
+.blog-page__back {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
+.blog-page__back:hover {
+  opacity: 0.75;
+}
+
+.blog-page__empty {
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* ── Category section ── */
+.blog-category {
+  margin-bottom: 3rem;
+}
+
+.blog-category__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-category__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--text);
+}
+
+.blog-category__see-all {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--accent);
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.blog-category__see-all:hover {
+  opacity: 0.75;
+}
+
+/* ── Post card description line ── */
+.blog-card__desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0.45rem 0 0;
+}
+
+/* ── Post breadcrumb ── */
+.post-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+}
+
+.post-breadcrumb__link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.post-breadcrumb__link:hover {
+  opacity: 0.75;
+}
+
+.post-breadcrumb__sep {
+  color: var(--text-faint);
+}
+
+/* ── Category badge in post meta ── */
+.post-meta__category {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.post-meta__category:hover {
+  opacity: 0.8;
+}
+
+/* ── Post footer ── */
+.post-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.post-footer__all {
+  color: var(--text-muted);
+}
+
+.post-footer__all:hover {
+  color: var(--accent);
+}

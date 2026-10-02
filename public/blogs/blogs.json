@@ -1,3 +1,6 @@
 [
-  "kubernetes-ckad-cheatsheet"
+  "kubernetes-ckad-cheatsheet",
+  "aws/s3-deep-dive",
+  "aws/iam-roles-explained",
+  "aws/Big-Data-and-Streaming"
 ]

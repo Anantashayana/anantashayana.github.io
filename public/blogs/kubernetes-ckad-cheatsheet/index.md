@@ -3,6 +3,8 @@ title: Kubernetes CKAD Exam Cheatsheet & Tips
 date: 2025-01-05 12:28:00
 author: Anantashayana
 tags: ['kubernetes', 'cheatsheet', 'tips']
+category: Kubernetes
+description: A practical cheatsheet covering pods, deployments, services, secrets, and exam tips for the CKAD certification.
 ---
 
 # Kubernetes CKAD Exam: Cheatsheet & Tips 🎓

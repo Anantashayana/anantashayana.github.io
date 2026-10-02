@@ -75,7 +75,7 @@ const Home = () => {
         <div className="landing__section-head">
           <h2>Latest posts</h2>
           <Link to="/blog" className="landing__see-all">
-            All posts →
+            All posts &rarr;
           </Link>
         </div>
 
@@ -87,36 +87,18 @@ const Home = () => {
               <Link key={post.slug} to={`/post/${post.slug}`} className="landing__post">
                 <span className="landing__post-title">{post.title}</span>
                 <span className="landing__post-meta">
-                  {post.date ? new Date(post.date).toLocaleDateString() : ''}
+                  {post.date
+                    ? new Date(post.date).toLocaleDateString('en-US', {
+                        month: 'numeric',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })
+                    : ''}
                 </span>
               </Link>
             ))}
           </div>
         )}
-      </section>
-
-      {/* Explore */}
-      <section className="landing__section">
-        <div className="landing__section-head">
-          <h2>Explore</h2>
-        </div>
-        <div className="landing__links">
-          <Link to="/projects" className="landing__link">
-            <span className="landing__link-icon">🛠️</span>
-            <span className="landing__link-title">Projects</span>
-            <span className="landing__link-sub">Things I’ve built</span>
-          </Link>
-          <Link to="/bookshelf" className="landing__link">
-            <span className="landing__link-icon">📚</span>
-            <span className="landing__link-title">Bookshelf</span>
-            <span className="landing__link-sub">What I’m reading</span>
-          </Link>
-          <Link to="/work" className="landing__link">
-            <span className="landing__link-icon">💼</span>
-            <span className="landing__link-title">Work</span>
-            <span className="landing__link-sub">Where I’ve worked</span>
-          </Link>
-        </div>
       </section>
     </div>
   );
